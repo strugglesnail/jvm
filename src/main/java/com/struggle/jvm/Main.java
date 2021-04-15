@@ -1,5 +1,7 @@
 package com.struggle.jvm;
 
+import com.struggle.jvm.load.Classpath;
+
 import java.util.Arrays;
 
 /**
@@ -21,6 +23,13 @@ public class Main {
             System.out.println("java version \"1.8.0\"");
             return;
         }
-        System.out.println(Arrays.toString(args) + cmd.getAppArgs());
+//        System.out.println(Arrays.toString(args) + cmd.classpath);
+        Classpath classpath = new Classpath(cmd.jre, cmd.classpath);
+        String className = cmd.getMainClass().replace(".", "/");
+        byte[] bytes = classpath.readClass(className);
+        for (byte aByte : bytes) {
+
+        }
+
     }
 }

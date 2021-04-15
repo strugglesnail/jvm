@@ -15,7 +15,7 @@ public class Classpath {
 
     public Classpath(String jreOption, String userOption) {
         // 启动类&扩展类 "C:\Program Files\Java\jdk1.8.0_161\jre"
-
+        bootstrapAndExtensionClasspath(jreOption);
         // 用户类：程序员自定义的类
 
     }
@@ -42,7 +42,7 @@ public class Classpath {
     // 解析用户类路径
 
     // 读取类文件获取字节码
-    private byte[] readClass(String className) {
+    public byte[] readClass(String className) {
         return null;
     }
 
