@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Cmd cmd = Cmd.parse(args);
 //        System.out.println(cmd.ok + " " + cmd.helpFlag);
         if (!cmd.ok || cmd.helpFlag) {
@@ -25,9 +25,16 @@ public class Main {
             return;
         }
 //        System.out.println(Arrays.toString(args) + cmd.classpath);
+        startJVM(cmd);
+
+
+    }
+
+    private static void startJVM(Cmd cmd) throws IOException {
         Classpath classpath = new Classpath(cmd.jre, cmd.classpath);
         String className = cmd.getMainClass().replace(".", "/");
         byte[] bytes = classpath.readClass(className);
+        System.out.println(className);
         try {
             for (byte b : bytes) {
                 System.out.print(String.format("%02x", b & 0xff) + " ");
@@ -36,7 +43,5 @@ public class Main {
             System.out.println("Could not find or load main class " + cmd.getMainClass());
             e.printStackTrace();
         }
-
-
     }
 }

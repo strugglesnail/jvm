@@ -1,27 +1,27 @@
-package com.struggle.jvm.entry;
+package com.struggle.jvm.load.classpath;
 
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * @author strugglesnail
  * @date 2021/4/14
- * @desc 压缩包形式路径
+ * @desc 目录形式路径
  */
-public class ZipEntry implements Entry {
+public class DirEntry implements Entry {
 
     // 绝对路径
     private Path absolutePath;
 
-    public ZipEntry(String path) {
+    public DirEntry(String path) {
         this.absolutePath = Paths.get(path).toAbsolutePath();
     }
 
     @Override
     public byte[] readClass(String className) throws IOException {
-        try (FileSystem fs = FileSystems.newFileSystem(absolutePath, null)){
-            return Files.readAllBytes(fs.getPath(className));
-        }
+        return Files.readAllBytes(absolutePath.resolve(className));
     }
 
     @Override

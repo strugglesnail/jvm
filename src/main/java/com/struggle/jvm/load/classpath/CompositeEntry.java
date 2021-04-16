@@ -1,4 +1,4 @@
-package com.struggle.jvm.entry;
+package com.struggle.jvm.load.classpath;
 
 import java.io.File;
 import java.io.IOException;
