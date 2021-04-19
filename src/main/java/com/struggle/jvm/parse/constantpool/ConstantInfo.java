@@ -1,4 +1,6 @@
-package com.struggle.jvm.parse;
+package com.struggle.jvm.parse.constantpool;
+
+import com.struggle.jvm.parse.ClassReader;
 
 /**
  * @auther strugglesnail
@@ -21,4 +23,24 @@ public interface ConstantInfo {
     int CONSTANT_TAG_METHODHANDLE = 15;       // 表示方法句柄
     int CONSTANT_TAG_METHODTYPE = 16;         // 标识方法类型
     int CONSTANT_TAG_INVOKEDYNAMIC = 18;      // 表示一个动态方法调用点
+
+    // 阅读信息
+    void readInfo(ClassReader reader);
+
+    // 标签
+    int tag();
+
+    // 读取常量信息
+    static ConstantInfo readConstantInfo(ClassReader reader, ConstantPool pool) {
+        // 标签
+        int tag = reader.readUint8();
+        // 常量信息实现类
+        ConstantInfo constantInfo = newConstantInfo(tag, pool);
+        // 读取常量信息
+        constantInfo.readInfo(reader);
+        return constantInfo;
+    }
+    static ConstantInfo newConstantInfo(int tag, ConstantPool pool) {
+        return null;
+    }
 }
