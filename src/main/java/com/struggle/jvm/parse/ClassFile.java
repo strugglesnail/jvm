@@ -57,8 +57,7 @@ public class ClassFile {
         this.minorVersion = reader.readUint16();
         this.majorVersion = reader.readUint16();
         switch (this.majorVersion) {
-            case 45:
-                return;
+            case 45: return;
             case 46:
             case 47:
             case 48:
@@ -66,8 +65,7 @@ public class ClassFile {
             case 50:
             case 51:
             case 52:
-                if (this.minorVersion == 0)
-                    return;
+                if (this.minorVersion == 0) return;
         }
         throw new UnsupportedClassVersionError();
     }
