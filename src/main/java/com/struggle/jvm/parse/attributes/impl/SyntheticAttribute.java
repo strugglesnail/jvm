@@ -1,10 +1,12 @@
 package com.struggle.jvm.parse.attributes.impl;
 
-import org.itstack.demo.jvm.classfile.ClassReader;
+
+import com.struggle.jvm.parse.ClassReader;
 
 /**
- * http://www.itstack.org
- * create by fuzhengwei on 2019/4/26
+ * @auther strugglesnail
+ * @date 2021/4/21 19:46
+ * @desc
  */
 public class SyntheticAttribute extends MarkerAttribute {
 
