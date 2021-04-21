@@ -9,6 +9,7 @@ import java.math.BigInteger;
  */
 public class ClassReader {
 
+    // 指定的字节
     private byte[] data;
 
     public ClassReader(byte[] data) {

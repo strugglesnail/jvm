@@ -6,10 +6,12 @@ import com.struggle.jvm.parse.constantpool.ConstantInfo;
 /**
  * @author strugglesnail
  * @date 2021/4/19
- * @desc
+ * @desc 标识方法类型
  */
 public class ConstantMethodTypeInfo implements ConstantInfo {
 
+    // u2类型，值必须对常量池的有效索引，
+    // 常量池在该索引处的项必须CONSTANT_Utf8_info结构，表示方法描述符
     private int descriptorIdx;
 
     @Override

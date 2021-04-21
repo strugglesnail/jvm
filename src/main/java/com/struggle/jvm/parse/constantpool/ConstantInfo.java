@@ -1,6 +1,7 @@
 package com.struggle.jvm.parse.constantpool;
 
 import com.struggle.jvm.parse.ClassReader;
+import com.struggle.jvm.parse.constantpool.impl.*;
 
 /**
  * @auther strugglesnail
@@ -40,7 +41,38 @@ public interface ConstantInfo {
         constantInfo.readInfo(reader);
         return constantInfo;
     }
+
+    // 获取常量信息
     static ConstantInfo newConstantInfo(int tag, ConstantPool pool) {
-        return null;
+        switch (tag) {
+            case CONSTANT_TAG_UTF8:
+                return new ConstantUtf8Info();
+            case CONSTANT_TAG_INTEGER:
+                return new ConstantIntegerInfo();
+            case CONSTANT_TAG_FLOAT:
+                return new ConstantFloatInfo();
+            case CONSTANT_TAG_LONG:
+                return new ConstantLongInfo();
+            case CONSTANT_TAG_DOUBLE:
+                return new ConstantDoubleInfo();
+            case CONSTANT_TAG_CLASS:
+                return new ConstantClassInfo(pool);
+            case CONSTANT_TAG_STRING:
+                return new ConstantStringInfo(pool);
+            case CONSTANT_TAG_FIELDREF:
+                return new ConstantFieldRefInfo(pool);
+            case CONSTANT_TAG_METHODREF:
+                return new ConstantMethodRefInfo(pool);
+            case CONSTANT_TAG_INTERFACEMETHODREF:
+                return new ConstantInterfaceMethodRefInfo(pool);
+            case CONSTANT_TAG_NAMEANDTYPE:
+                return new ConstantNameAndTypeInfo();
+            case CONSTANT_TAG_METHODTYPE:
+                return new ConstantMethodTypeInfo();
+            case CONSTANT_TAG_INVOKEDYNAMIC:
+                return new ConstantInvokeDynamicInfo();
+            default:
+                throw new ClassFormatError("constant pool tag");
+        }
     }
 }

@@ -14,6 +14,7 @@ import java.util.Map;
 public class ConstantMemberRefInfo implements ConstantInfo {
 
     protected ConstantPool constantPool;
+
     /**
      * u2类型，指向声明
      * 【字段的类或者接口】
@@ -21,10 +22,8 @@ public class ConstantMemberRefInfo implements ConstantInfo {
      * 【方法的接口】
      * 描述符CONSTANT_Class_info的索引项
       */
-
-    //
-    //
     protected int classIdx;
+
     // u2类型，指向字段描述符CONSTANT_NameAndType的索引项
     private int nameAndTypeIdx;
 
