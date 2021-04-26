@@ -18,7 +18,7 @@ public class CodeAttribute implements AttributeInfo {
     private int maxStack;
     // 局部变量数
     private int maxLocals;
-
+    // 数据
     private byte[] data;
     // 异常表
     private ExceptionTableEntry[] exceptionTable;

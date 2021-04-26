@@ -33,12 +33,12 @@ public class MemberInfo {
     }
 
     static MemberInfo[] readMembers(ClassReader reader, ConstantPool constantPool) {
-        int fieldCount = reader.readUint16();
-        MemberInfo[] fields = new MemberInfo[fieldCount];
-        for (int i = 0; i < fieldCount; i++) {
-            fields[i] = new MemberInfo(reader, constantPool);
+        int memberCount = reader.readUint16();
+        MemberInfo[] members = new MemberInfo[memberCount];
+        for (int i = 0; i < memberCount; i++) {
+            members[i] = new MemberInfo(reader, constantPool);
         }
-        return fields;
+        return members;
     }
 
     public int accessFlags() {
@@ -60,7 +60,7 @@ public class MemberInfo {
         return null;
     }
 
-    public ConstantValueAttribute ConstantValueAttribute() {
+    public ConstantValueAttribute constantValueAttribute() {
         for (AttributeInfo attrInfo : attributes) {
             if (attrInfo instanceof ConstantValueAttribute) return (ConstantValueAttribute) attrInfo;
         }

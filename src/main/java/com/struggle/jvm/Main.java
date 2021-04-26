@@ -2,7 +2,9 @@ package com.struggle.jvm;
 
 import com.struggle.jvm.load.Classpath;
 import com.struggle.jvm.parse.ClassFile;
+import com.struggle.jvm.parse.ClassReader;
 import com.struggle.jvm.parse.MemberInfo;
+import com.struggle.jvm.parse.constantpool.impl.ConstantUtf8Info;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -49,6 +51,7 @@ public class Main {
             byte[] classData = classpath.readClass(className);
             return new ClassFile(classData);
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Could not find or load main class " + className);
             return null;
         }

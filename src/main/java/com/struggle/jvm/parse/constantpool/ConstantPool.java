@@ -22,6 +22,7 @@ public class ConstantPool {
 
     public ConstantPool(ClassReader reader) {
         siz = reader.readUint16();
+        System.out.println(siz);
         constantInfos = new ConstantInfo[siz];
         for (int i = 1; i < siz; i++) {
             constantInfos[i] = ConstantInfo.readConstantInfo(reader, this);

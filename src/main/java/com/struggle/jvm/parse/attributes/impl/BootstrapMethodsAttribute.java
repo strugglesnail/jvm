@@ -6,7 +6,7 @@ import com.struggle.jvm.parse.attributes.AttributeInfo;
 
 /**
  * @author strugglesnail
- * @date 2021/4/21 15:00
+ * @date 2021/4/21 8:23
  * @desc 
  */
 public class BootstrapMethodsAttribute implements AttributeInfo {
