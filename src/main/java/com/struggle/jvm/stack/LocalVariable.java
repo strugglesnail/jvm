@@ -57,4 +57,8 @@ public class LocalVariable {
     public Object getRef(int idx) {
         return this.slots[idx].ref;
     }
+
+    public Slot[] getSlots() {
+        return slots;
+    }
 }

@@ -8,4 +8,12 @@ package com.struggle.jvm.stack;
 public class Slot {
     int num;
     Object ref;
+
+    public int getNum() {
+        return num;
+    }
+
+    public Object getRef() {
+        return ref;
+    }
 }

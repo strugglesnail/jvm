@@ -1,5 +1,6 @@
 package com.struggle.jvm;
 
+import com.alibaba.fastjson.JSON;
 import com.struggle.jvm.instructions.Factory;
 import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
@@ -57,6 +58,8 @@ public class Interpreter {
             // 偏移量
             instruction.fetchOperands(reader);
             stackFrame.setNextPC(reader.pc());
+            System.out.println("寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + instruction.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(stackFrame.getLocalVariable().getSlots()) + " 操作数栈：" + JSON.toJSONString(stackFrame.getOperandStack().getSlots()));            //exec
+
             // 执行指令码
             instruction.execute(stackFrame);
         }
