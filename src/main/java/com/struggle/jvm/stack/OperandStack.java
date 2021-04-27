@@ -31,6 +31,37 @@ public class OperandStack {
         return this.slots[size].num;
     }
 
+    public void pushFloat(float val) {
+        this.slots[this.size].num = (int) val;
+        this.size++;
+    }
+
+    public float popFloat() {
+        this.size--;
+        return this.slots[this.size].num;
+    }
+
+    public void pushLong(long val) {
+        this.slots[this.size].num = (int) val;
+        this.slots[this.size + 1].num = (int) (val >> 32);
+        this.size += 2;
+    }
+
+    public long popLong() {
+        this.size -= 2;
+        int low = this.slots[this.size].num;
+        int high = this.slots[this.size + 1].num;
+        return (long) (high) << 32 | (long) (low);
+    }
+
+    public void pushDouble(double val) {
+        this.pushLong((long) val);
+    }
+
+    public double popDouble() {
+        return this.popLong();
+    }
+
     public void pushRef(Object ref) {
         this.slots[size].ref = ref;
         this.size ++;
@@ -41,5 +72,19 @@ public class OperandStack {
         Object ref = this.slots[size].ref;
         this.slots[size].ref = null;
         return ref;
+    }
+
+    public void pushSlot(Slot slot) {
+        this.slots[this.size] = slot;
+        this.size++;
+    }
+
+    public Slot popSlot(){
+        this.size --;
+        return this.slots[this.size];
+    }
+
+    public Slot[] getSlots() {
+        return slots;
     }
 }

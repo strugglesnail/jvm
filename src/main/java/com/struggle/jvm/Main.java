@@ -43,6 +43,7 @@ public class Main {
         ClassFile classFile = loadClass(className, classpath);
         assert classFile != null;
         printClassInfo(classFile);
+
     }
 
 
@@ -72,6 +73,7 @@ public class Main {
         System.out.println("methods count: " + cf.methods().length);
         for (MemberInfo memberInfo : cf.methods()) {
             System.out.format("%s \t\t %s\n", memberInfo.name(), memberInfo.descriptor());
+            new Interpreter(memberInfo);
         }
     }
 }

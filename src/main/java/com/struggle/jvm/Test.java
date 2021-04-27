@@ -11,7 +11,10 @@ import java.util.Arrays;
  */
 public class Test {
 
+    int b = 1;
+
     public static void main(String[] args) throws UnsupportedEncodingException {
+        int a = 4;
 //        System.out.println(Runtime.getRuntime().availableProcessors() - 1);
 //        int length = 4;
 //        byte[] bytes = new byte[length];

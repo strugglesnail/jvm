@@ -38,6 +38,10 @@ public class StackFrame {
         this.nextPC = nextPC;
     }
 
+    public int getNextPC() {
+        return nextPC;
+    }
+
     public Thread thread() {
         return thread;
     }
