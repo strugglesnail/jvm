@@ -17,11 +17,11 @@ public class MemberInfo {
     private ConstantPool constantPool;
     // 访问权限
     private int accessFlags;
-    //
+    // 常量池索引（方法名称）
     private int nameIdx;
-    // 描述符
+    // 常量池索引（方法参数类型及返回类型）
     private int descriptorIdx;
-    // 属性
+    // Code属性、LineNumberTable及异常表
     private AttributeInfo[] attributes;
 
     private MemberInfo(ClassReader reader, ConstantPool constantPool) {

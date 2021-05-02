@@ -69,6 +69,7 @@ public class ClassReader {
     }
 
 
+    // 核心方法截取字节数组
     private byte[] readByte(int length) {
         byte[] copy = new byte[length];
         System.arraycopy(data, 0, copy, 0, length);

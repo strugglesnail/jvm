@@ -6,8 +6,6 @@ import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
 import com.struggle.jvm.parse.MemberInfo;
 import com.struggle.jvm.parse.attributes.impl.CodeAttribute;
-import com.struggle.jvm.stack.LocalVariable;
-import com.struggle.jvm.stack.OperandStack;
 import com.struggle.jvm.stack.StackFrame;
 import com.struggle.jvm.stack.Thread;
 
@@ -25,7 +23,7 @@ public class Interpreter {
         CodeAttribute code = memberInfo.codeAttribute();
         int maxLocals = code.maxLocals(); // 最大的局部变量slot
         int maxStack = code.maxStack(); // 最大的操作数栈slot
-        byte[] data = code.data();
+        byte[] data = code.data(); // 字节码指令
         // 创建栈帧
         StackFrame stackFrame = thread.newFrame(maxLocals, maxStack);
         // 栈帧入栈（方法的调用）
@@ -58,10 +56,11 @@ public class Interpreter {
             // 偏移量
             instruction.fetchOperands(reader);
             stackFrame.setNextPC(reader.pc());
-            System.out.println("寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + instruction.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(stackFrame.getLocalVariable().getSlots()) + " 操作数栈：" + JSON.toJSONString(stackFrame.getOperandStack().getSlots()));            //exec
-
             // 执行指令码
             instruction.execute(stackFrame);
+
+            System.out.println("寄存器(指令)：" + byteToHexString(new byte[]{opcode}) + " -> " + instruction.getClass().getSimpleName() + " => 局部变量表：" + JSON.toJSONString(stackFrame.getLocalVariable().getSlots()) + " 操作数栈：" + JSON.toJSONString(stackFrame.getOperandStack().getSlots()));            //exec
+
         }
 
     }

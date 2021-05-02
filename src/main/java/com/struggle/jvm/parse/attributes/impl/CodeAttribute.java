@@ -8,7 +8,7 @@ import com.struggle.jvm.parse.constantpool.ConstantPool;
 /**
  * @author strugglesnail
  * @date 2021/4/21 14:58
- * @desc Code属性
+ * @desc Code属性（包含一些字节码指令信息）
  */
 public class CodeAttribute implements AttributeInfo {
 
@@ -18,7 +18,7 @@ public class CodeAttribute implements AttributeInfo {
     private int maxStack;
     // 局部变量数
     private int maxLocals;
-    // 数据
+    // 字节数据（字节码指令）
     private byte[] data;
     // 异常表
     private ExceptionTableEntry[] exceptionTable;

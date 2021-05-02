@@ -10,9 +10,9 @@ import com.struggle.jvm.parse.constantpool.ConstantInfo;
  */
 public class ConstantNameAndTypeInfo implements ConstantInfo {
 
-    // u2类型，指向该字段或方法名称常量项的索引
+    // u2类型，指向该字段或方法名称常量项的索引（变量名称或方法名称）
     public int nameIdx;
-    // u2类型，指向该字段或方法描述符常量项的索引
+    // u2类型，指向该字段或方法描述符常量项的索引（变量类型或方法类型）
     public int descIdx;
 
     @Override
