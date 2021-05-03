@@ -3,7 +3,9 @@ package com.struggle.jvm.parse.constantpool;
 import com.struggle.jvm.parse.ClassReader;
 import com.struggle.jvm.parse.constantpool.impl.ConstantClassInfo;
 import com.struggle.jvm.parse.constantpool.impl.ConstantNameAndTypeInfo;
+import com.struggle.jvm.parse.constantpool.impl.ConstantStringInfo;
 import com.struggle.jvm.parse.constantpool.impl.ConstantUtf8Info;
+import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +13,7 @@ import java.util.Map;
 /**
  * @auther strugglesnail
  * @date 2021/4/18 10:01
- * @desc
+ * @desc 本地常量池
  */
 public class ConstantPool {
 
@@ -49,6 +51,10 @@ public class ConstantPool {
     }
 
 
+    public String getString(int idx) {
+        ConstantStringInfo stringInfo = (ConstantStringInfo) this.constantInfos[idx];
+        return stringInfo == null ? "" : stringInfo.string();
+    }
     public String getUTF8(int idx) {
         ConstantUtf8Info utf8Info = (ConstantUtf8Info) this.constantInfos[idx];
         return utf8Info == null ? "" : utf8Info.str();
