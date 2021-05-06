@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.stores.istore;
 
 
 import com.struggle.jvm.instructions.base.InstructionIndex8;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class ISTORE extends InstructionIndex8 {
 

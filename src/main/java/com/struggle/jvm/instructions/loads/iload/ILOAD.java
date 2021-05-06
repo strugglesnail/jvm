@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.loads.iload;
 
 
 import com.struggle.jvm.instructions.base.InstructionIndex8;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 //load int from local variable
 public class ILOAD extends InstructionIndex8 {

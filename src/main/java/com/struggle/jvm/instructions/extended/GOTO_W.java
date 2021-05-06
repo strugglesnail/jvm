@@ -3,7 +3,7 @@ package com.struggle.jvm.instructions.extended;
 
 import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 //branch always(wide index)
 public class GOTO_W implements Instruction {

@@ -1,4 +1,4 @@
-package com.struggle.jvm.stack;
+package com.struggle.jvm.rtda;
 
 import java.util.Objects;
 
@@ -38,7 +38,7 @@ public class JvmStack {
     // 栈帧出栈
     public StackFrame pop() {
         if (this._top == null){
-            throw new RuntimeException("jvm stack is empty!");
+            throw new RuntimeException("jvm rtda is empty!");
         }
         StackFrame top = this._top;
         this._top = top.lower;
@@ -49,7 +49,7 @@ public class JvmStack {
     // 获取当前栈帧
     public StackFrame top(){
         if (this._top == null){
-            throw new RuntimeException("jvm stack is empty!");
+            throw new RuntimeException("jvm rtda is empty!");
         }
         return this._top;
     }

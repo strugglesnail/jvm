@@ -2,9 +2,9 @@ package com.struggle.jvm.instructions.stack.dup;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.Slot;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.Slot;
+import com.struggle.jvm.rtda.StackFrame;
 
 /*
 bottom -> top

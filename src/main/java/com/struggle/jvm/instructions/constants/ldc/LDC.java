@@ -3,7 +3,8 @@ package com.struggle.jvm.instructions.constants.ldc;
 import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
 import com.struggle.jvm.parse.constantpool.ConstantPool;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 /**
  * @author strugglesnail
@@ -16,15 +17,20 @@ public class LDC implements Instruction {
 
     private ConstantPool constantPool;
 
+    public LDC(ConstantPool constantPool) {
+        this.constantPool = constantPool;
+    }
 
     @Override
     public void fetchOperands(BytecodeReader reader) {
-        reader.readByte();
+        idx = reader.readByte();
     }
 
     @Override
     public void execute(StackFrame frame) {
-        String className = constantPool.getUTF8(idx);
-
+        String string = constantPool.getString(idx);
+//        System.out.println("LDC: " + string);
+        OperandStack operandStack = frame.getOperandStack();
+        operandStack.pushRef(string);
     }
 }

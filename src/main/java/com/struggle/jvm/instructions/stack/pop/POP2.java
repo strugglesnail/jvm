@@ -2,10 +2,10 @@ package com.struggle.jvm.instructions.stack.pop;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
-// Pop the top one or two operand stack values
+// Pop the top one or two operand rtda values
 /*
 bottom -> top
 [...][c][b][a]

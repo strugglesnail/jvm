@@ -2,8 +2,8 @@ package com.struggle.jvm.instructions.comparisons.if_icmp;
 
 import com.struggle.jvm.instructions.base.Instruction;
 import com.struggle.jvm.instructions.base.InstructionBranch;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class IF_ICMPGT extends InstructionBranch {
 

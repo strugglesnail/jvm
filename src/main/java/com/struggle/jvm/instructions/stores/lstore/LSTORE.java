@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.stores.lstore;
 
 
 import com.struggle.jvm.instructions.base.InstructionIndex8;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class LSTORE extends InstructionIndex8 {
 

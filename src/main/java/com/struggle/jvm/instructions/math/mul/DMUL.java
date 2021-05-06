@@ -2,8 +2,8 @@ package com.struggle.jvm.instructions.math.mul;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 //Multiply double
 public class DMUL extends InstructionNoOperands {

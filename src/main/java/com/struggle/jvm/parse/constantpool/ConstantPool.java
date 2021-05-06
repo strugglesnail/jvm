@@ -1,10 +1,7 @@
 package com.struggle.jvm.parse.constantpool;
 
 import com.struggle.jvm.parse.ClassReader;
-import com.struggle.jvm.parse.constantpool.impl.ConstantClassInfo;
-import com.struggle.jvm.parse.constantpool.impl.ConstantNameAndTypeInfo;
-import com.struggle.jvm.parse.constantpool.impl.ConstantStringInfo;
-import com.struggle.jvm.parse.constantpool.impl.ConstantUtf8Info;
+import com.struggle.jvm.parse.constantpool.impl.*;
 import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 
 import java.util.HashMap;
@@ -48,6 +45,10 @@ public class ConstantPool {
     public String getClassName(int idx){
         ConstantClassInfo classInfo = (ConstantClassInfo) this.constantInfos[idx];
         return this.getUTF8(classInfo.nameIdx);
+    }
+
+    public ConstantMemberRefInfo getMemberRefInfo(int idx){
+        return (ConstantMemberRefInfo) this.constantInfos[idx];
     }
 
 

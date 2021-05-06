@@ -3,7 +3,7 @@ package com.struggle.jvm.instructions.control;
 
 import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 //access jump table by index and jump
 public class TABLE_SWITCH implements Instruction {

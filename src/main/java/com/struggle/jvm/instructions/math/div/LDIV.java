@@ -2,8 +2,8 @@ package com.struggle.jvm.instructions.math.div;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 //divide long
 public class LDIV extends InstructionNoOperands {

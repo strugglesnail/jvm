@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.extended.ifnull;
 
 import com.struggle.jvm.instructions.base.Instruction;
 import com.struggle.jvm.instructions.base.InstructionBranch;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 //branch if reference is null
 public class IFNULL extends InstructionBranch {

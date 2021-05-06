@@ -67,4 +67,7 @@ public class MemberInfo {
         return null;
     }
 
+    public ConstantPool getConstantPool() {
+        return constantPool;
+    }
 }

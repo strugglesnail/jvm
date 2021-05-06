@@ -3,8 +3,8 @@ package com.struggle.jvm.instructions.math.iinc;
 
 import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
-import com.struggle.jvm.stack.LocalVariable;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.LocalVariable;
+import com.struggle.jvm.rtda.StackFrame;
 
 //increment local variable by constants
 public class IINC implements Instruction {

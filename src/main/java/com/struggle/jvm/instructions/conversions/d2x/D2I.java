@@ -2,8 +2,8 @@ package com.struggle.jvm.instructions.conversions.d2x;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class D2I extends InstructionNoOperands {
 

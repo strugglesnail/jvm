@@ -14,7 +14,7 @@ import com.struggle.jvm.instructions.stores.dstore.DSTORE;
 import com.struggle.jvm.instructions.stores.fstore.FSTORE;
 import com.struggle.jvm.instructions.stores.istore.ISTORE;
 import com.struggle.jvm.instructions.stores.lstore.LSTORE;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class WIDE implements Instruction {
 

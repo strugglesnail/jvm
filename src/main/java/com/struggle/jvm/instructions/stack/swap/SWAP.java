@@ -1,11 +1,11 @@
 package com.struggle.jvm.instructions.stack.swap;
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.Slot;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.Slot;
+import com.struggle.jvm.rtda.StackFrame;
 
-//Swap the top two operand stack values
+//Swap the top two operand rtda values
 /*
 bottom -> top
 [...][c][b][a]

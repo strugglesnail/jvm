@@ -2,8 +2,8 @@ package com.struggle.jvm.instructions.math.and;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.OperandStack;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.OperandStack;
+import com.struggle.jvm.rtda.StackFrame;
 
 // boolean and long
 public class LAND extends InstructionNoOperands {

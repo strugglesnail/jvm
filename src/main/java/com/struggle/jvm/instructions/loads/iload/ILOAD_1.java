@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.loads.iload;
 
 
 import com.struggle.jvm.instructions.base.InstructionNoOperands;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class ILOAD_1 extends InstructionNoOperands {
 

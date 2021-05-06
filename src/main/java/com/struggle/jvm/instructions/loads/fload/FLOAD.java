@@ -2,7 +2,7 @@ package com.struggle.jvm.instructions.loads.fload;
 
 
 import com.struggle.jvm.instructions.base.InstructionIndex8;
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 //load float from local variable
 public class FLOAD extends InstructionIndex8 {

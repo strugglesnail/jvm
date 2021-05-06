@@ -6,8 +6,9 @@ import com.struggle.jvm.instructions.base.BytecodeReader;
 import com.struggle.jvm.instructions.base.Instruction;
 import com.struggle.jvm.parse.MemberInfo;
 import com.struggle.jvm.parse.attributes.impl.CodeAttribute;
-import com.struggle.jvm.stack.StackFrame;
-import com.struggle.jvm.stack.Thread;
+import com.struggle.jvm.parse.constantpool.ConstantPool;
+import com.struggle.jvm.rtda.StackFrame;
+import com.struggle.jvm.rtda.Thread;
 
 /**
  * @author strugglesnail
@@ -29,10 +30,10 @@ public class Interpreter {
         // 栈帧入栈（方法的调用）
         thread.pushFrame(stackFrame);
         // 栈帧出栈
-        loop(thread, data);
+        loop(thread, data, memberInfo.getConstantPool());
     }
 
-    private void loop(Thread thread, byte[] data) {
+    private void loop(Thread thread, byte[] data, ConstantPool constantPool) {
         // 创建字节解析器
         BytecodeReader reader = new BytecodeReader();
         // 当前栈帧
@@ -48,7 +49,7 @@ public class Interpreter {
             // 获取指令偏移量
             byte opcode = reader.readByte();
             // 根据偏移量获取指令
-            Instruction instruction = Factory.newInstruction(opcode);
+            Instruction instruction = Factory.newInstruction(opcode, constantPool);
             if (instruction == null) {
                 System.out.println("程序计数器(指令)尚未实现 " + byteToHexString(new byte[]{opcode}));
                 break;

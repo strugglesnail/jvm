@@ -1,7 +1,7 @@
 package com.struggle.jvm.instructions.base;
 
 
-import com.struggle.jvm.stack.StackFrame;
+import com.struggle.jvm.rtda.StackFrame;
 
 public class InstructionIndex8 implements Instruction {
 
