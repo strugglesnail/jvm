@@ -2,7 +2,6 @@ package com.struggle.jvm.parse.constantpool;
 
 import com.struggle.jvm.parse.ClassReader;
 import com.struggle.jvm.parse.constantpool.impl.*;
-import com.sun.org.apache.bcel.internal.classfile.ConstantString;
 
 import java.util.HashMap;
 import java.util.Map;

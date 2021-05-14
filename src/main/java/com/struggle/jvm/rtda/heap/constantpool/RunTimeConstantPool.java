@@ -16,12 +16,12 @@ public class RunTimeConstantPool {
     private Class aClass;
 
     // 常量池
-    private Object[] constants;
+    public Object[] constants;
 
-    public RunTimeConstantPool(Class aClass, ConstantPool constantPool) {
+    public RunTimeConstantPool(Class clazz, ConstantPool constantPool) {
         ConstantInfo[] constantInfos = constantPool.getConstantInfos();
         int cpCount = constantInfos.length;
-        this.aClass = aClass;
+        this.aClass = clazz;
         for (int i = 1; i < cpCount; i++) {
             ConstantInfo constantInfo = constantInfos[i];
             switch (constantInfo.tag()) {
@@ -57,5 +57,17 @@ public class RunTimeConstantPool {
                     break;
             }
         }
+    }
+
+    public Class getClazz() {
+        return aClass;
+    }
+
+    public Object getConstants(int idx) {
+        return constants[idx];
+    }
+
+    public void setConstants(Object[] constants) {
+        this.constants = constants;
     }
 }

@@ -9,7 +9,7 @@ public class DLOAD extends InstructionIndex8 {
     @Override
     public void execute(StackFrame frame) {
         double val = frame.getLocalVariable().getDouble(this.idx);
-        frame.getOperandStack().pushRef(val);
+        frame.getOperandStack().pushDouble(val);
     }
 
 }

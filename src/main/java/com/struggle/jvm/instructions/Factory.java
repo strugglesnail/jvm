@@ -14,9 +14,7 @@ import com.struggle.jvm.instructions.comparisons.lcmp.LCMP;
 import com.struggle.jvm.instructions.constants.consts.*;
 import com.struggle.jvm.instructions.constants.ipush.BIPUSH;
 import com.struggle.jvm.instructions.constants.ipush.SIPUSH;
-import com.struggle.jvm.instructions.constants.ldc.LDC;
 import com.struggle.jvm.instructions.constants.nop.NOP;
-import com.struggle.jvm.instructions.constants.statik.GET_STATIC;
 import com.struggle.jvm.instructions.control.GOTO;
 import com.struggle.jvm.instructions.control.LOOKUP_SWITCH;
 import com.struggle.jvm.instructions.control.TABLE_SWITCH;
@@ -122,8 +120,8 @@ public class Factory {
                 return new BIPUSH();
             case 0x11:
                 return new SIPUSH();
-             case 0x12:
-             	return new LDC(constantPool);
+//             case 0x12:
+//             	return new LDC(constantPool);
             // case 0x13:
             // 	return &LDC_W{}
             // case 0x14:
@@ -442,8 +440,8 @@ public class Factory {
             // 	return areturn
             // case 0xb1:
             // 	return _return
-            	case (byte) 0xb2:
-            		return new GET_STATIC(constantPool);
+//            	case (byte) 0xb2:
+//            		return new GET_STATIC(constantPool);
             // case 0xb3:
             // 	return &PUT_STATIC{}
             // case 0xb4:

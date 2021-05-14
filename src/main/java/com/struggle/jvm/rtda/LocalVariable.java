@@ -1,5 +1,7 @@
 package com.struggle.jvm.rtda;
 
+import com.struggle.jvm.rtda.heap.methodarea.Object;
+
 /**
  * @author strugglesnail
  * @date 2021/4/25

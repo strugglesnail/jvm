@@ -2,6 +2,7 @@ package com.struggle.jvm.instructions.base;
 
 
 import com.struggle.jvm.rtda.StackFrame;
+import com.struggle.jvm.rtda.heap.methodarea.Object;
 
 public class InstructionIndex8 implements Instruction {
 

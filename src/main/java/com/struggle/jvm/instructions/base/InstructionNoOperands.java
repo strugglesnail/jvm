@@ -3,6 +3,7 @@ package com.struggle.jvm.instructions.base;
 
 import com.struggle.jvm.rtda.OperandStack;
 import com.struggle.jvm.rtda.StackFrame;
+import com.struggle.jvm.rtda.heap.methodarea.Object;
 
 public class InstructionNoOperands implements Instruction {
     @Override

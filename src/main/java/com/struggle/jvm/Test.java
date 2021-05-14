@@ -11,6 +11,7 @@ import java.util.Arrays;
  */
 public class Test {
 
+    final int  a = 1;
     int b = 1;
 
     public static void main(String[] args) throws UnsupportedEncodingException {

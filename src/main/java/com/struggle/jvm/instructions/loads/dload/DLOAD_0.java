@@ -9,7 +9,7 @@ public class DLOAD_0 extends InstructionNoOperands {
     @Override
     public void execute(StackFrame frame) {
         double val = frame.getLocalVariable().getDouble(0);
-        frame.getOperandStack().pushRef(val);
+        frame.getOperandStack().pushDouble(val);
     }
 
 }
